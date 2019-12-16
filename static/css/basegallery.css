@@ -1,7 +1,17 @@
-h2{
-  color: #D62246;
+.quote {
+  text-align: center;
+  padding: 20px;
 }
-body{
-  background-color: #D4F4DD;
-  font-family: 'Prompt', sans-serif;
+
+.container {
+  margin: 0 auto;
+  max-width: 1200px;
+  padding: 0 1rem;
+}
+
+.bruv{
+  padding: 15px 15px 15px 15px;
+}
+.navbar-toggler-icon{
+  background-color:#00A6ED;
 }

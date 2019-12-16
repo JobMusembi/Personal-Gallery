@@ -1,33 +1,46 @@
 {% extends 'base.html' %}
 {% block content %}
-<h2 class="text-center"> Welcome to the My Personal Gallery</h2>
 
-<div class="container">
+
+<div class="container text-center" style="font-family: 'Prompt', sans-serif;">
+  <div class="quote">
+    <p>The camera makes you forget you're there. It's not like you are hiding but you forget, you are just looking so much. ~ Annie Leibovitz</p>
+    <hr>
+  </div>
 
   <!-- Looping through photos   -->
   {% for photos_item in photos %}
-  <div class="row">
-    <div class="col-md-4">
-      <div class="card">
-        <a href="{{photos_item.img.url}}" target="_blank">
-          <img src="{{photos_item.img.url}}" alt="" style="width:100%">
-          <div class="title">
-            <p class="font-weight-bold">{{ photos_item.img_name }}</p>
-    
-          </div>
-        </a>
+
+
+      <img data-toggle="modal" data-target="#{{photos_item.img_name}}" class="text-center"src="{{photos_item.img.url}}" alt="{{photos_item.img_name}}" style="width:100%;max-width:500px;padding-top:10px;">
+
+      <!-- Modal -->
+<div class="modal fade bd-example-modal-lg" id="{{photos_item.img_name}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLongTitle">{{photos_item.img_name}}</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+      <img src="{{photos_item.img.url}}" alt="{{photos_item.name}}"  style="width:100%;max-width:500px">
+      </div>
+      <div class="modal-footer">
+        <p>{{photos_item.img_description}}</p>
       </div>
     </div>
   </div>
+</div>
 
-  </div>
 
   {% empty %}
   <div class="row">
     <h2 class="text-center">There No Photos Currently</h2>
   </div>
   {% endfor %}
-
 </div>
+
 
 {% endblock %}
