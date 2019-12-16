@@ -26,6 +26,12 @@ class Image(models.Model):
         photos = cls.objects.filter()
         return photos
 
+    @classmethod
+    def search_by_category(cls,search_term):
+        category = Category.objects.filter(name__icontains=search_term)
+        photos = cls.objects.filter(category_id=category)
+        return photos
+
 class category(models.Model):
     name = models.CharField(max_length =30)
 
