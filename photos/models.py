@@ -10,7 +10,7 @@ class Image(models.Model):
     category = models.ForeignKey('Category',on_delete=models.CASCADE)
 
     def __str__(self):
-        return self.img
+        return str(self.img)
 
     def save_image(self):
         self.save()
@@ -20,6 +20,11 @@ class Image(models.Model):
 
     def update_image(self):
         self.update()
+
+    @classmethod
+    def photos_display(cls):
+        photos = cls.objects.filter()
+        return photos
 
 class category(models.Model):
     name = models.CharField(max_length =30)

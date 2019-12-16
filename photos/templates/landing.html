@@ -2,4 +2,32 @@
 {% block content %}
 <h2 class="text-center"> Welcome to the My Personal Gallery</h2>
 
+<div class="container">
+
+  <!-- Looping through photos   -->
+  {% for photos_item in photos %}
+  <div class="row">
+    <div class="col-md-4">
+      <div class="card">
+        <a href="{{photos_item.img.url}}" target="_blank">
+          <img src="{{photos_item.img.url}}" alt="" style="width:100%">
+          <div class="title">
+            <p class="font-weight-bold">{{ photos_item.img_name }}</p>
+    
+          </div>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  </div>
+
+  {% empty %}
+  <div class="row">
+    <h2 class="text-center">There No Photos Currently</h2>
+  </div>
+  {% endfor %}
+
+</div>
+
 {% endblock %}
