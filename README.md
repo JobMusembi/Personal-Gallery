@@ -1,6 +1,7 @@
 # Personal Gallery
 
 ## Link to Deployed Site
+https://jobsgallery.herokuapp.com/
 
 ## Description
 
