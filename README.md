@@ -6,6 +6,14 @@
 
 This is a personal gallery application, more like a photography portfolio that displays photos for others to see.
 
+## Objectives and Specifics
+
+* One can View different photos that interest me.
+* One can Click on a single photo to expand it and also view the details of the photo. The photo details appear on a modal within the same route as the main page.
+* One can Search for different categories of photos. (ie. food, fashion)
+* One can Copy a link to the photo to share with my friends.
+* One can View photos based on the location they were taken.
+
 ## Getting Started
 
 * Open my Personal Gallery Repo and Clone it[GitHub](https://github.com/JobMusembi/Personal-Gallery)
