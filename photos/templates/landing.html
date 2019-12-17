@@ -26,33 +26,25 @@
       </div>
       <div class="modal-body">
       <img src="{{photos_item.img.url}}" alt="{{photos_item.name}}"  style="width:100%;max-width:500px">
-        <div style="padding-top:5px;">
-        <input type="text" value="https://jobsgallery.herokuapp.com{{photos_item.img.url}}" id="myInput">
+      <div style="padding-top:10px;">
+        <input class="form-control input-lg" type="text"
+          value="https://jobsgallery.herokuapp.com{{photos_item.img.url}}" id="{{image.id}}-url">
+       <div style="padding-top:10px;">
+         <button class="btn btn-info"
+           onclick="imageurl('{{image.id}}-url');">Copy Link</button><br>
+       </div>
 
+     </div>
+     <script>
+       function imageurl(element) {
+         var image = document.getElementById(element);
+         image.select();
+         document.execCommand('copy');
+         alert("Copied the link of image:" + image.value);
+       }
+     </script>
+     <!-- End of copy -->
 
-        <button class="btn btn-info" onclick="myFunction()" onmouseout="outFunc()">
-          <span class="tooltiptext" id="myTooltip"></span>
-          Copy Link
-        </button>
-
-
-            <script>
-            function myFunction() {
-              var copyText = document.getElementById("myInput");
-              copyText.select();
-              copyText.setSelectionRange(0, 99999);
-              document.execCommand("copy");
-
-              var tooltip = document.getElementById("myTooltip");
-              tooltip.innerHTML = "Copied: " + copyText.value;
-            }
-
-            function outFunc() {
-              var tooltip = document.getElementById("myTooltip");
-              tooltip.innerHTML = "Copy to clipboard";
-            }
-            </script>
-            </div>
       </div>
       <div class="modal-footer">
         <p>{{photos_item.img_description}}</p>
