@@ -16,7 +16,7 @@ This is a personal gallery application, more like a photography portfolio that d
 
 ## Getting Started
 
-* Open my Personal Gallery Repo and Clone it[GitHub](https://github.com/JobMusembi/Personal-Gallery)
+* Open my Personal Gallery Repo and Clone it [GitHub](https://github.com/JobMusembi/Personal-Gallery)
 * $ cd Personal-Gallery
 * $ Create a virtual environment python3.6 -m venv virtual (install virtual environment)
 * $ source virtual/bin/activate or virtual/scripts/activate
