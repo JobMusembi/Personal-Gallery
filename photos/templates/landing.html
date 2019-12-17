@@ -28,10 +28,10 @@
       <img src="{{photos_item.img.url}}" alt="{{photos_item.name}}"  style="width:100%;max-width:500px">
       <div style="padding-top:10px;">
         <input class="form-control input-lg" type="text"
-          value="https://jobsgallery.herokuapp.com{{photos_item.img.url}}" id="{{image.id}}-url">
+          value="https://jobsgallery.herokuapp.com{{photos_item.img.url}}" id="{{photos_item.id}}-url">
        <div style="padding-top:10px;">
          <button class="btn btn-info"
-           onclick="imageurl('{{image.id}}-url');">Copy Link</button><br>
+           onclick="imageurl('{{photos_item.id}}-url');">Copy Link</button><br>
        </div>
 
      </div>
