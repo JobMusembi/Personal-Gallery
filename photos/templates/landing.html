@@ -26,6 +26,33 @@
       </div>
       <div class="modal-body">
       <img src="{{photos_item.img.url}}" alt="{{photos_item.name}}"  style="width:100%;max-width:500px">
+        <div style="padding-top:5px;">
+        <input type="text" value="{{photos_item.img.url}}" id="myInput">
+
+
+        <button class="btn btn-info" onclick="myFunction()" onmouseout="outFunc()">
+          <span class="tooltiptext" id="myTooltip"></span>
+          Copy Link
+        </button>
+
+
+            <script>
+            function myFunction() {
+              var copyText = document.getElementById("myInput");
+              copyText.select();
+              copyText.setSelectionRange(0, 99999);
+              document.execCommand("copy");
+
+              var tooltip = document.getElementById("myTooltip");
+              tooltip.innerHTML = "Copied: " + copyText.value;
+            }
+
+            function outFunc() {
+              var tooltip = document.getElementById("myTooltip");
+              tooltip.innerHTML = "Copy to clipboard";
+            }
+            </script>
+            </div>
       </div>
       <div class="modal-footer">
         <p>{{photos_item.img_description}}</p>

@@ -1,6 +1,24 @@
 from django.db import models
 
 # Create your models here.
+class category(models.Model):
+    name = models.CharField(max_length =30)
+
+    def __str__(self):
+        return self.name
+
+    def save_category(self):
+        self.save()
+
+class location(models.Model):
+    location_name = models.CharField(max_length =30)
+
+    def __str__(self):
+        return self.location_name
+
+    def save_location(self):
+        self.save()
+
 class Image(models.Model):
 
     img = models.ImageField(upload_to = 'images/', default='path/to/my/default/image.jpg')
@@ -28,24 +46,23 @@ class Image(models.Model):
 
     @classmethod
     def search_by_category(cls,search_term):
-        category = Category.objects.filter(name__icontains=search_term)
-        photos = cls.objects.filter(category_id=category)
+        cate = category.objects.get(name=search_term)
+        photos = cls.objects.filter(category_id=cate.id)
         return photos
 
-class category(models.Model):
-    name = models.CharField(max_length =30)
+    @classmethod
+    def get_image_by_id(cls,id):
+        try:
+            image = cls.objects.get(id=id)
+            print("Object Found")
+            return image
+        except DoesNotExist:
+            print("Object Not Found")
 
-    def __str__(self):
-        return self.name
-
-    def save_category(self):
-        self.save()
-
-class location(models.Model):
-    location_name = models.CharField(max_length =30)
-
-    def __str__(self):
-        return self.location_name
-
-    def save_location(self):
-        self.save()
+    @classmethod
+    def filter_by_location(cls, location):
+        try:
+            images = cls.objects.filter(location=location)
+            return images
+        except DoesNotExist:
+            print("Object Does Not Exist")
