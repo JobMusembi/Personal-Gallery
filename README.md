@@ -27,16 +27,20 @@ This is a personal gallery application, more like a photography portfolio that d
 
 ## Prerequisites
 
-    - Python 3.6 required
+    - Python 3.6.8 required
 
 ## Known bugs
 No known errors
 
 ## Technologies used
-    - Python 3.6
+    - Python 3.6.8
     - Bootstrap4
     - Django 3.0
     - Heroku
+
+## Known bugs
+
+There are no known bugs. If any arise do not hesitate to reach out
 
 ## Author name
 
@@ -48,4 +52,4 @@ LICENSE https://github.com/JobMusembi/Personal-Gallery/blob/master/LICENSE
 
 ### Acknowledgement
 
-my Colleagues for the support in the debuging process
+My Colleagues for the moral and technical support in the process.
