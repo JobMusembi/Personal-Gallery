@@ -48,6 +48,10 @@ class Image(models.Model):
     def search_by_category(cls,search_term):
         photos = cls.objects.filter(category__name__icontains=search_term)
         return photos
+    @classmethod
+    def filter_by_location(cls,location_term):
+        location=cls.objects.filter(location__location_name__icontains=location_term)
+        return location
 
     @classmethod
     def get_image_by_id(cls,id):
@@ -58,10 +62,4 @@ class Image(models.Model):
         except DoesNotExist:
             print("Object Not Found")
 
-    @classmethod
-    def filter_by_location(cls, location):
-        try:
-            images = cls.objects.filter(location=location)
-            return images
-        except DoesNotExist:
-            print("Object Does Not Exist")
+    
