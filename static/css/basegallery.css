@@ -1,17 +1,52 @@
 .quote {
   text-align: center;
   padding: 20px;
+  font-family: 'Cormorant Garamond', serif;
 }
-
+.inform{
+margin: 0 auto;
+}
 .container {
   margin: 0 auto;
-  max-width: 1200px;
+  max-width: 100%;
   padding: 0 1rem;
 }
 
 .bruv{
   padding: 15px 15px 15px 15px;
 }
-.navbar-toggler-icon{
-  background-color:#00A6ED;
+
+.centered {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+}
+
+.myDiv {
+  position: relative;
+  z-index: 5;
+  height: 500px;
+  width: 100%;
+  padding-top: 20px;
+}
+
+.myDiv::before {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: url('https://www.saatchigallery.com/aipe/imgs/artschwager/CS11_0006_Artschwager_OH_GCR.jpg') center center;
+    opacity: .6;
+}
+
+.custom-toggler.navbar-toggler {
+    border-color: rgb(33, 33, 71);
+}
+.custom-toggler .navbar-toggler-icon {
+  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(33, 33, 71, 0.7)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E");
 }
